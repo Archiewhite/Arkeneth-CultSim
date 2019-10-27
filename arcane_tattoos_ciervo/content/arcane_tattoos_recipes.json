@@ -1,0 +1,1492 @@
+{
+"recipes": 
+[
+	{
+		"id":"tattoo_lostcolours_induction",
+		"actionId":"tattoo_lostcolours_induction",
+		"label":"A gleam of what was",
+		"startdescription":"I've used a follower who carries the mark of the colours that were. The Suppression Bureau may hear of it.",
+		"effects":{"notoriety":1},
+		"warmup":30
+	},
+	{
+		"id":"locationtattoo_hint",
+		"label":"The Ink-Eye Parlour",
+		"actionId":"explore",
+		"requirements":{"inkeye":1, "compensationvalue":-1},
+		"startdescription":"This is the Ink-Eye. I can purchase tattooing implements here.",
+		"craftable":false,
+		"hintonly":true
+	},
+	{
+		"id":"tattoo_purchasekit",
+		"label":"Purchase a tattoo kit?",
+		"actionId":"explore",
+		"requirements":{"inkeye":1, "compensation":1},
+		"startdescription":"Ink-Eye sells tattoo kits for personal use. I can purchase one.",
+		"description":"It is marked with their distinctive eye.",
+		"effects":{"tattoo_kit":1, "compensation":-1},
+		"craftable":true,
+		"warmup":30
+	},
+	{
+		"id":"tattoo_purchasepigments",
+		"label":"Purchase a couple of pigments?",
+		"actionId":"explore",
+		"requirements":{"inkeye":1, "compensationb":1},
+		"startdescription":"Ink-Eye sells occult pigments, although they're packed in non-descript bags. I can purchase some. A Bronze Spintria will buy a few, but neither I nor the vendor know what's inside.",
+		"description":"The bag is sealed. I shouldn't open it until I get home.",
+		"effects":{"compensationb":-1},
+		"deckeffect": {"paintseye":2},
+		"craftable":true,
+		"warmup":60
+	},
+	{
+		"id":"tattoo_purchasemorepigments",
+		"label":"Purchase several pigments?",
+		"actionId":"explore",
+		"requirements":{"inkeye":1, "compensationc":1},
+		"startdescription":"Ink-Eye sells occult pigments, although they're packed in non-descript bags. I can purchase some. A Silver Spintria will buy several, but neither I nor the vendor know what's inside.",
+		"description":"The bag is sealed. I shouldn't open it until I get home.",
+		"effects":{"compensationc":-1},
+		"deckeffect": {"paintseye":4},
+		"craftable":true,
+		"warmup":60
+	},
+	{
+		"id":"tattoo_purchaseunpaint",
+		"label":"Purchase a special pigment?",
+		"actionId":"explore",
+		"requirements":{"inkeye":1, "compensationd":1},
+		"startdescription":"Ink-Eye sells occult pigments, although they're packed in non-descript bags. I can purchase some. A Gold Spintria will buy something special, stored separately from 'normal' pigments. Perhaps I shouldn't purchase it in the first place.",
+		"description":"The bag is sealed. I shouldn't open it until I get home.",
+		"effects":{"compensationd":-1, "apocryphapaint":1},
+		"craftable":true,
+		"warmup":60
+	},
+	{
+        "id": "tattoo_fascination",
+        "label": "Apply a tattoo of Glory's light?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"fascination":1,"funds":1},
+        "startdescription": "I can use these to apply a tattoo of Glory's maddening light.",
+        "description": "Better not look too close.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_fascination","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_dread",
+        "label": "Apply a tattoo of existential horror?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"dread":1,"funds":1},
+        "startdescription": "I can use these to apply a tattoo of a horrifying image.",
+        "description": "The dark days of the soul, on this one's skin.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_dread","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"edge","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_fleeting",
+        "label": "Apply a tattoo of a fleeting memory?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"fleeting":1,"funds":1},
+        "startdescription": "I can use these to apply a tattoo of a fleeting memory.",
+        "description": "A day in their life.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_fleeting","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_restlessness",
+        "label": "Apply a wild pattern?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"restlessness":1,"funds":1},
+        "startdescription": "I can use these to apply a wild, restlessness-induced pattern.",
+        "description": "Soon, even I won't see any reason to this.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_restlessness","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"heart","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_knock_knock",
+        "label": "Apply a tattoo of the Mother of Ants?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientknockb":1,"fragmentknockd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Mother of Ants.",
+        "description": "Saint Agnes, in her more horrifying form.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_motherofants","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_knock_lantern",
+        "label": "Apply a tattoo of the Meniscate?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientknockb":1,"fragmentlanternd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Meniscate.",
+        "description": "The moon, and her scar.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_meniscate","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_knock_forge",
+        "label": "Apply a tattoo of Ghirbi, the Head?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientknockb":1,"fragmentforged":1},
+        "startdescription": "I can use these to apply a tattoo of Ghirbi, the Name who guards the Stag Door.",
+        "description": "A golden head which cries lead.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_ghirbi","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_knock_winter",
+        "label": "Apply a tattoo of the Horned-Axe?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientknockb":1,"fragmentwinterd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Horned-Axe.",
+        "description": "A labrys in a doorway.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_hornedaxe","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":3,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_knock_grail",
+        "label": "Apply a tattoo of the Beach-Crow?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientknockb":1,"fragmentgraild":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Beach-Crow.",
+        "description": "With one of his many treasures.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_beachcrow","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lantern_knock",
+        "label": "Apply a tattoo of the Meniscate?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientlanternb":1,"fragmentknockd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Meniscate.",
+        "description": "The moon, and her scar.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_meniscate","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lantern_lantern",
+        "label": "Apply a tattoo of the Watchman?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientlanternb":1,"fragmentlanternd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Watchman.",
+        "description": "The one who guards the Glory.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_watchman","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lantern_forge",
+        "label": "Apply a tattoo of the King Crucible?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientlanternb":1,"fragmentforged":1},
+        "startdescription": "I can use these to apply a tattoo of the Name known as the King Crucible.",
+        "description": "Fire and combustion, in a simple candle.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_kingcrucible","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lantern_winter",
+        "label": "Apply a tattoo of the Sun-in-Rags?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientlanternb":1,"fragmentwinterd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Sun-in-Rags.",
+        "description": "A sunset in blood.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_suninrags","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lantern_grail",
+        "label": "Apply a tattoo of the Flowermaker?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientlanternb":1,"fragmentgraild":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Flowermaker.",
+        "description": "A succulent lily.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_flowermaker","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lantern_secrethistories",
+        "label": "Apply a tattoo of the Baldomerian?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientlanternb":1,"fragmentsecrethistoriesd":1},
+        "startdescription": "I can use these to apply a tattoo of the Name known as the Baldomerian.",
+        "description": "A scholar's profile.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_teresa","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_forge_knock",
+        "label": "Apply a tattoo of Ghirbi, the Head?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientforgeb":1,"fragmentknockd":1},
+        "startdescription": "I can use these to apply a tattoo of Ghirbi, the Name who guards the Stag Door.",
+        "description": "A golden head which cries lead.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_ghirbi","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_forge_lantern",
+        "label": "Apply a tattoo of the King Crucible?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientforgeb":1,"fragmentlanternd":1},
+        "startdescription": "I can use these to apply a tattoo of the Name known as the King Crucible.",
+        "description": "Fire and combustion, in a mere candle.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_kingcrucible","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_forge_forge",
+        "label": "Apply a tattoo of the Forge of Days?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientforgeb":1,"fragmentforged":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Forge of Days.",
+        "description": "Another dawn, fresh out of the forge.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_forgeofdays","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_forge_edge",
+        "label": "Apply a tattoo of the Lionsmith?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientforgeb":1,"fragmentedged":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Lionsmith.",
+        "description": "The Golden General, with his brigade of monsters.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_lionsmith","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"edge","mutationLevel":3,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_forge_winter",
+        "label": "Apply a tattoo of the Madrugad?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientforgeb":1,"fragmentwinterd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Madrugad.",
+        "description": "The chilly dawn, the rising dead.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_madrugad","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_forge_grail",
+        "label": "Apply a tattoo of Ezeem?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientforgeb":1,"fragmentgraild":1},
+        "startdescription": "I can use these to apply a tattoo of the Name known as Ezeem, the Second Thirstly.",
+        "description": "Blood that calls for change.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_ezeem","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_forge_moth",
+        "label": "Apply a tattoo of Amethyst Imago?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientforgeb":1,"fragmentmothd":1},
+        "startdescription": "I can use these to apply a tattoo of the Name known as the Amethyst Imago.",
+        "description": "What is she, now?",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_amethystimago","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_forge_secrethistories",
+        "label": "Apply a tattoo of Hubris Glamore?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientforgeb":1,"fragmentsecrethistoriesd":1},
+        "startdescription": "I can use these to apply a tattoo of the Name known as Hubris Glamore.",
+        "description": "His face unknown, his stories recorded.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_hubrisglamore","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_edge_forge",
+        "label": "Apply a tattoo of the Lionsmith?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientedgeb":1,"fragmentforged":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Lionsmith.",
+        "description": "The Golden General, with his brigade of monsters.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_lionsmith","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"edge","mutationLevel":3,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_edge_edge",
+        "label": "Apply a tattoo of the Colonel?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientedgeb":1,"fragmentedged":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Colonel.",
+        "description": "More scar than man.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_colonel","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"edge","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_edge_winter",
+        "label": "Apply a tattoo of the Wolf-Divided?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientedgeb":1,"fragmentwinterd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Wolf-Divided.",
+        "description": "Caput gerat lupinum.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_wolfdivided","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"edge","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_winter_knock",
+        "label": "Apply a tattoo of the Horned-Axe?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientwinterb":1,"fragmentknockd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Horned-Axe.",
+        "description": "A labrys in a doorway.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_hornedaxe","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":3,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_winter_lantern",
+        "label": "Apply a tattoo of the Sun-in-Rags?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientwinterb":1,"fragmentlanternd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Sun-in-Rags.",
+        "description": "A sunset in blood.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_suninrags","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_winter_forge",
+        "label": "Apply a tattoo of the Madrugad?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientwinterb":1,"fragmentforged":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Madrugad.",
+        "description": "The chilly dawn, the rising dead.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_madrugad","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_winter_edge",
+        "label": "Apply a tattoo of the Wolf-Divided?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientwinterb":1,"fragmentedged":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Wolf-Divided.",
+        "description": "Caput gerat lupinum.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_wolfdivided","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"edge","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_winter_winter",
+        "label": "Apply a tattoo of the Elegiast?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientwinterb":1,"fragmentwinterd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Elegiast.",
+        "description": "The Ivory Dove remembers.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_elegiast","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_winter_secrethistories",
+        "label": "Apply a tattoo of Miss Naenia?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientwinterb":1,"fragmentsecrethistoriesd":1},
+        "startdescription": "I can use these to apply a tattoo of the Name known as Naenia.",
+        "description": "The gentlest name of the Dove, just like on the painting.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_naenia","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_heart_heart",
+        "label": "Apply a tattoo of the Thunderskin?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientheartb":1,"fragmentheartd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Thunderskin.",
+        "description": "In his ecstasic dance.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_thunderskin","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"heart","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_heart_grail",
+        "label": "Apply a tattoo of the Witch-and-Sister?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientheartb":1,"fragmentgraild":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Witch-and-Sister. [Use Vital Pigment and Geminate Invocation to tattoo Sister-and-Witch instead.]",
+        "description": "The Sea-Twins, as they would wish to drown.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_witchandsister","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":3,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"heart","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_heart_moth",
+        "label": "Apply a tattoo of the Velvet?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientheartb":1,"fragmentmothd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Velvet.",
+        "description": "A mole in the Wood, with a secret she guards.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_velvet","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"heart","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_grail_knock",
+        "label": "Apply a tattoo of the Beach-Crow?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientgrailb":1,"fragmentknockd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Beach-Crow.",
+        "description": "With one of his many treasures.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_beachcrow","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_grail_lantern",
+        "label": "Apply a tattoo of the Flowermaker?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientgrailb":1,"fragmentlanternd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Flowermaker.",
+        "description": "A succulent lily.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_flowermaker","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_grail_forge",
+        "label": "Apply a tattoo of Ezeem?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientgrailb":1,"fragmentforged":1},
+        "startdescription": "I can use these to apply a tattoo of the Name known as Ezeem, the Second Thirstly.",
+        "description": "Blood that calls for change.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_ezeem","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_grail_heart",
+        "label": "Apply a tattoo of the Sister-and-Witch?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientgrailb":1,"fragmentheartd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Sister-and-Witch. [Use Rose-Pearl Dust and Thiatic Invocation to tattoo Witch-and-Sister instead.]",
+        "description": "The Crossroad-Twins, as kites above the water.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_sisterandwitch","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"heart","mutationLevel":3,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_grail_grail",
+        "label": "Apply a tattoo of the Red Grail?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientgrailb":1,"fragmentgraild":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Red Grail.",
+        "description": "Blood and birth and feast.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_redgrail","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_grail_moth",
+        "label": "Apply a tattoo of the Malachite?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientgrailb":1,"fragmentmothd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Malachite.",
+        "description": "Rich gifts of honey.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_malachite","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_moth_forge",
+        "label": "Apply a tattoo of Amethyst Imago?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientmothb":1,"fragmentforged":1},
+        "startdescription": "I can use these to apply a tattoo of the Name known as the Amethyst Imago.",
+        "description": "What is she, now?",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_amethystimago","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_moth_heart",
+        "label": "Apply a tattoo of the Velvet?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientmothb":1,"fragmentheartd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Velvet.",
+        "description": "A mole in the Wood, with a secret she guards.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_velvet","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"heart","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_moth_grail",
+        "label": "Apply a tattoo of the Malachite?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientmothb":1,"fragmentgraild":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Malachite.",
+        "description": "Rich gifts of honey.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_malachite","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_moth_moth",
+        "label": "Apply a tattoo of the Moth?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientmothb":1,"fragmentmothd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Moth.",
+        "description": "Scissors and cut hair.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_moth","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_moth_secrethistories",
+        "label": "Apply a tattoo of the Vagabond?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientmothb":1,"fragmentsecrethistoriesd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Vagabond.",
+        "description": "Once, she will return to the Mansus.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_vagabond","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":3,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_secrethistories_lantern",
+        "label": "Apply a tattoo of the Baldomerian?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"fragmentlanternd":1},
+        "startdescription": "I can use these to apply a tattoo of the Name known as the Baldomerian.",
+        "description": "A scholar's profile.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_teresa","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_secrethistories_forge",
+        "label": "Apply a tattoo of Hubris Glamore?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"fragmentforged":1},
+        "startdescription": "I can use these to apply a tattoo of the Name known as Hubris Glamore.",
+        "description": "His face unknown, his stories recorded.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_hubrisglamore","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_secrethistories_winter",
+        "label": "Apply a tattoo of Miss Naenia?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"fragmentwinterd":1},
+        "startdescription": "I can use these to apply a tattoo of the Name known as Naenia.",
+        "description": "The gentlest name of the Dove, just like on the painting.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_naenia","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	
+	{
+        "id": "tattoo_secrethistories_moth",
+        "label": "Apply a tattoo of the Vagabond?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"fragmentmothd":1},
+        "startdescription": "I can use these to apply a tattoo of the Hour known as the Vagabond.",
+        "description": "Once, she will return to the Mansus.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_vagabond","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":3,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_secrethistories_secrethistories",
+        "label": "Apply a tattoo of Christopher Illopoly?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"fragmentsecrethistoriesd":1},
+        "startdescription": "A peculiar choice. Uncanny, even. Then again, he isn't called the world's only readable occultist for nothing.",
+        "description": "Books are the memory which does not die. May his books be his immortality.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_chris","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":3,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lost_sevencoiled",
+        "label": "Apply a tattoo of the Seven-Coiled?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"memory.furious":1},
+        "startdescription": "Long ago, the Seven-Coiled was slain by the Colonel and the Mother of Ants. I can commemorate him with this act.",
+        "description": "The monsters of the past.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_sevencoiled","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"edge","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed_lostcolours","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lost_tide",
+        "label": "Apply a tattoo of the Tide",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"memory.luxurious":1},
+        "startdescription": "Long ago, the Grail drained the Tide. I can commemorate it with this act.",
+        "description": "The passions of the past.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_tide","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed_lostcolours","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lost_hornedaxe",
+        "label": "Apply a Liminal tattoo?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"memory.liminal":1},
+        "startdescription": "The world was different, long ago, when the Horned-Axe was not the only God-from-Stone. I can commemorate that change with this act.",
+        "description": "The world that was.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_liminal","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed_lostcolours","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lost_eggunhatching",
+        "label": "Apply a tattoo of the Egg Unhatching?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"memory.horizon":1},
+        "startdescription": "Long ago, the Egg Unhatching fled into the Glory to escape the Lithomachy. I can commemorate it with this act.",
+        "description": "The sunlight of the past.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_eggunhatching","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed_lostcolours","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lost_suninsplendour",
+        "label": "Apply a tattoo of the Sun-in-Splendour?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"memory.splendid":1},
+        "startdescription": "Noon, as they say, is not as it was. Before, it was different. I can commemorate the noon that was with this act.",
+        "description": "The Glory of the past.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_suninsplendour","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed_lostcolours","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lost_wheel",
+        "label": "Apply a tattoo of the Wheel?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"memory.endless":1},
+        "startdescription": "Long ago, the Wheel was usurped by the Moth. I can commemorate it with this act.",
+        "description": "The world's heartbeat of the past.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_wheel","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"heart","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed_lostcolours","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lost_oldwood",
+        "label": "Apply a tattoo of the Old Wood?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"memory.wildering":1},
+        "startdescription": "Long ago, the Wood was brighter. I can commemorate the Wood that was with this act.",
+        "description": "The Wood of the past.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_oldwood","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed_lostcolours","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lost_flint",
+        "label": "Apply a tattoo of the Flint?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"memory.golden":1},
+        "startdescription": "Long ago, the Flint was surpassed by the Forge of Days. I can commemorate it with this act.",
+        "description": "The works of the past.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_flint","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":4,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed_lostcolours","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lost_carapacecross",
+        "label": "Apply a tattoo of the Carapace Cross?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientsecrethistoriesb":1,"memory.honeyed":1},
+        "startdescription": "Long ago, we consumed our ancestry. I can commemorate it with this act.",
+        "description": "The mankind of the past.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_carapacecross","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":8,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed_lostcolours","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_secrethistories_",
+        "label": "Apply a Secret Histories-aspected Tattoo?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientknockb":1},
+        "startdescription": "I can use this to apply a tattoo touched by a knot in the Histories. [With correct lore, this might be a more effective tattoo.]",
+        "description": "This never happened. This has definitely happened.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_knock","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_knock_",
+        "label": "Apply a Knock-aspected Tattoo?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientknockb":1},
+        "startdescription": "I can use this to apply a tattoo touched by Knock. [With correct lore, this might be a more effective tattoo.]",
+        "description": "A purple, serpent-shaped key.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_knock","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_lantern_",
+        "label": "Apply a Lantern-aspected Tattoo?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientlanternb":1},
+        "startdescription": "I can use this to apply a tattoo touched by Lantern. [With correct lore, this might be a more effective tattoo.]",
+        "description": "A few smudges of the brightest white.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_lantern","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_forge_",
+        "label": "Apply a Forge-aspected Tattoo?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientforgeb":1},
+        "startdescription": "I can use this to apply a tattoo touched by Forge. [With correct lore, this might be a more effective tattoo.]",
+        "description": "Rich oranges of a conflagration.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_forge","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_edge_",
+        "label": "Apply a Edge-aspected Tattoo?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientedgeb":1},
+        "startdescription": "I can use this to apply a tattoo touched by Edge. [With correct lore, this might be a more effective tattoo.]",
+        "description": "Greenish blade which calls for strife.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_edge","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"edge","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_winter_",
+        "label": "Apply a Winter-aspected Tattoo?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientwinterb":1},
+        "startdescription": "I can use this to apply a tattoo touched by Winter. [With correct lore, this might be a more effective tattoo.]",
+        "description": "Snowfall.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_winter","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_heart_",
+        "label": "Apply a Heart-aspected Tattoo?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientheartb":1},
+        "startdescription": "I can use this to apply a tattoo touched by Heart. [With correct lore, this might be a more effective tattoo.]",
+        "description": "Vermillion heartbeat.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_heart","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"heart","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_grail_",
+        "label": "Apply a Grail-aspected Tattoo?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientgrailb":1},
+        "startdescription": "I can use this to apply a tattoo touched by Grail. [With correct lore, this might be a more effective tattoo.]",
+        "description": "Richest blood.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_grail","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_moth_",
+        "label": "Apply a Moth-aspected Tattoo?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"ingredientmothb":1},
+        "startdescription": "I can use this to apply a tattoo touched by Moth. [With correct lore, this might be a more effective tattoo.]",
+        "description": "Unclear swipes of unclear colour.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_mothaspect","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":2,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_apocrypha_knock",
+        "label": "Apply a tattoo of the Mare-in-the-Tree?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"apocryphapaint":1,"fragmentknockd":1},
+        "startdescription": "I can use this to apply a tattoo of the perilous Hour known as the Mare-in-the-Tree.",
+        "description": "The more I look, the more unsettling this picture becomes.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_mareinthetree","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":6,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_apocrypha_lantern",
+        "label": "Apply a tattoo of the Chandler?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"apocryphapaint":1,"fragmentlanternd":1},
+        "startdescription": "I can use this to apply a tattoo of the Hour that will be known as the Chandler.",
+        "description": "Hers will be the light at dream's edge.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_chandler","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":6,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_apocrypha_forge",
+        "label": "Apply a tattoo of the Blackbone?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"apocryphapaint":1,"fragmentforged":1},
+        "startdescription": "I can use this to apply a tattoo of the pelagic Hour known as the Blackbone.",
+        "description": "This scene is not one a human can see - not hostile, but utterly alien.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_blackbone","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":6,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_apocrypha_edge",
+        "label": "Apply a tattoo of the Rising Spider?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"apocryphapaint":1,"fragmentedged":1},
+        "startdescription": "I can use this to apply a tattoo of the ambitious from-Nowhere Hour known as the Rising Spider.",
+        "description": "Stark and ready to pounce.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_risingspider","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"edge","mutationLevel":6,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_apocrypha_winter",
+        "label": "Apply a tattoo of the Snow?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"apocryphapaint":1,"fragmentwinterd":1},
+        "startdescription": "I can use this to apply a tattoo of the forgotten Hour known as the Snow.",
+        "description": "The rest is silence.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_snow","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":6,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_apocrypha_heart",
+        "label": "Apply a tattoo of the Crowned Growth?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"apocryphapaint":1,"fragmentheartd":1},
+        "startdescription": "I can use this to apply a tattoo of the infective Hour known as the Crowned Growth. I will need a powerful protective incantation to avert its attention.",
+        "description": "No. No. No. NO. NO. NO NO NO.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_crownedgrowth","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"heart","mutationLevel":6,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"resentment","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_apocrypha_grail",
+        "label": "Apply a tattoo of Applebright?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"apocryphapaint":1,"fragmentgraild":1},
+        "startdescription": "I can use this to apply a tattoo of the God-from-Nowhere known as Applebright.",
+        "description": "Cheery. Deceptive.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_applebright","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":6,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_apocrypha_moth",
+        "label": "Apply a tattoo of the Egg?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"apocryphapaint":1,"fragmentmothd":1},
+        "startdescription": "I can use this to apply a tattoo of the Hour known as the Egg, which used to be the Egg Unhatching.",
+        "description": "Will it let us free?",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_egg","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":6,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	
+	{
+        "id": "tattoo_apocrypha_secrethistories",
+        "label": "Apply a tattoo of the Witness?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1,"follower":1,"apocryphapaint":1,"fragmentsecrethistoriesd":1},
+        "startdescription": "I can use this to apply a tattoo of the observant Hour known as the Witness.",
+        "description": "Soon. Very soon.",
+        "craftable": true,
+		"mutations":
+		[
+			{"filterOnAspectId":"follower","mutateAspectId":"tattoo_chandler","mutationLevel":1,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":6,"additive":true},
+			{"filterOnAspectId":"follower","mutateAspectId":"tattooed","mutationLevel":1,"additive":true}
+		], "warmup":45
+    },
+	{
+        "id": "tattoo_working_paints_apocrypha",
+        "label": "Un-Painting",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1, "locationtattoo":1, "pigment":1, "auctionable":-1},
+        "startdescription": "'No. Don't open it here.' [The owner will not allow you to tattoo her customers with this pigment.]",
+		"hintonly":true, 
+		"warmup":45
+    },
+	{
+        "id": "tattoo_working_memory_unacceptable",
+        "label": "Lost Colours",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1, "locationtattoo":1, "memory":5},
+        "startdescription": "'I know what you are thinking, but no, I cannot allow that. These memories are not for my clients. I don't want more trouble with the Suppression Bureau.' [The owner will not allow you to tattoo her customers with memories of lost things.]",
+		"hintonly":true, 
+		"warmup":45
+    },
+	{
+        "id": "tattoo_hint",
+        "label": "Apply a tattoo?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1},
+        "startdescription": "I can use this to apply tattoos. [Add Ink-Eye to work at there, or a follower to apply a tattoo to them.]",
+		"hintonly":true, 
+		"warmup":45
+    },
+	{
+        "id": "tattoo_working_lore_paints",
+        "label": "Work at the Ink-Eye?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1, "locationtattoo":1, "pigment":1, "auctionable":1, "lore":1},
+        "startdescription": "I can use my talents to work at the Ink-Eye. The owner will pay me at the end of the day, and compensate for the pigments expended. [This will pay better.]",
+        "description": "The sun sets. I return home, at last, my payment in my pocket.",
+		"effects": {"funds":3},
+		"deckeffect": {"paintseye":1},
+        "craftable": true,
+		"warmup":75
+    },
+	{
+        "id": "tattoo_working_lore",
+        "label": "Work at the Ink-Eye?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1, "locationtattoo":1, "lore":1, "pigment":-1},
+        "startdescription": "I can use my talents to work at the Ink-Eye. The owner will pay me at the end of the day. [This will pay better.]",
+        "description": "The sun sets. I return home, at last, my payment in my pocket.",
+		"effects": {"funds":3},
+        "craftable": true,
+		"warmup":75
+    },
+	{
+        "id": "tattoo_working_memory_paints",
+        "label": "Work at the Ink-Eye?",
+        "actionId": "work",
+        "requirements": 
+		{
+			"tattoo_implement":1, "locationtattoo":1, "pigment":1, "auctionable":1, "memory":1,
+			"memory.luxurious":-1,
+			"memory.splendid":-1,
+			"memory.horizon":-1,
+			"memory.wildering":-1,
+			"memory.liminal":-1,
+			"memory.honeyed":-1,
+			"memory.furious":-1,
+			"memory.golden":-1,
+			"memory.endless":-1
+		},
+        "startdescription": "I can use my talents to work at the Ink-Eye. The owner will pay me at the end of the day, and compensate for the pigments expended. [This will pay better.]",
+        "description": "The sun sets. I return home, at last, my payment in my pocket.",
+		"effects": {"funds":2},
+		"deckeffect": {"paintseye":1},
+        "craftable": true,
+		"warmup":60
+    },
+	{
+        "id": "tattoo_working_memory",
+        "label": "Work at the Ink-Eye?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1, "locationtattoo":1, "memory":1, "pigment":-1,
+			"memory.luxurious":-1,
+			"memory.splendid":-1,
+			"memory.horizon":-1,
+			"memory.wildering":-1,
+			"memory.liminal":-1,
+			"memory.honeyed":-1,
+			"memory.furious":-1,
+			"memory.golden":-1,
+			"memory.endless":-1
+		},
+        "startdescription": "I can use my talents to work at the Ink-Eye. The owner will pay me at the end of the day. [This will pay better.]",
+        "description": "The sun sets. I return home, at last, my payment in my pocket.",
+		"effects": {"funds":2},
+        "craftable": true,
+		"warmup":60
+    },
+	{
+        "id": "tattoo_working_paints",
+        "label": "Work at the Ink-Eye?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1, "locationtattoo":1, "pigment":1, "auctionable":1, "lore":-1, "memory":-1},
+        "startdescription": "I can use my talents to work at the Ink-Eye. The owner will pay me at the end of the day, and compensate for the pigments expended.",
+        "description": "The sun sets. I return home, at last, my payment in my pocket.",
+		"effects": {"funds":1},
+		"deckeffect": {"paintseye":1},
+        "craftable": true,
+		"warmup":45
+    },
+	{
+        "id": "tattoo_working",
+        "label": "Work at the Ink-Eye?",
+        "actionId": "work",
+        "requirements": {"tattoo_implement":1, "locationtattoo":1, "pigment":-1, "memory":-1, "lore":-1},
+        "startdescription": "I can use my talents to work at the Ink-Eye. The owner will pay me at the end of the day.",
+        "description": "The sun sets. I return home, at last, my payment in my pocket.",
+		"effects": {"funds":1},
+        "craftable": true,
+		"warmup":45
+    }
+]
+}

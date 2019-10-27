@@ -1,0 +1,555 @@
+{"elements":
+[
+	{
+		"id": "tattoo_implement",
+		"label":"Tattooing Kit",
+		"description": "This can be used to tattoo followers.",
+		"isAspect":true
+	},
+	
+	{
+	
+		"id": "inkeye",
+		"label":"Ink-Eye",
+		"description": "An unblinking black eye on white background.",
+		"isAspect":true
+	},
+	
+	{
+		"id": "ingredientsecrethistoriesb",
+		"label": "Lost Colour",
+		"description": "Once, this could be recognized. No more.",
+		"aspects": {"secrethistories":4,"auctionable":2,"ingredient":1,"pigment":1}
+	},
+	{
+		"id": "apocryphapaint",
+		"label": "Un-Paint",
+		"description": "This is the colour that knows no light.",
+		"aspects": {"ingredient":1,"pigment":1}
+	},
+	{
+        "id": "locationtattoo",
+        "label": "Ink-Eye",
+        "aspects":{"location": 1, "inkeye":1},
+		"slots": 
+		[{
+			"id":"Cost","label":"Cost","actionId": "explore","required": {"compensationvalue":1},"consumes":true, "description":"What shall I pay?"
+		}],
+        "description": "A painted eye is the symbol of this obscure tattoo parlour.",
+		"unique":true
+    },
+	
+	{
+		"id": "tattoo_kit",
+        "label": "Tattooing Kit",
+        "aspects":{"tattoo_implement":1, "job":1},
+		"slots": 
+		[
+			{"id":"Follower","label":"Subject","actionId": "work", "required": {"follower": 1, "locationtattoo":1}, "forbidden": {"summoned":1, "tattooed":1}, "description": "Whom am I going to tattoo?"},
+			{"id":"Paint","label":"Pigment","actionId": "work", "required": {"pigment":1, "funds":1},"consumes": true,"description": "What is the pigment that I shall use?"},
+			{"id":"Knowledge","label":"Knowledge","actionId": "work","required": 
+			{
+				"fragmentknockd":1,
+				"fragmentlanternd":1,
+				"fragmentforged":1,
+				"fragmentedged":1,
+				"fragmentwinterd":1,
+				"fragmentheartd":1,
+				"fragmentgraild":1,
+				"fragmentmothd":1,
+				"fragmentsecrethistoriesd":1,
+				"memory":1
+			}, 
+			"description": "What knowledge shall I impart onto their skin?"}
+		],
+        "description": "I can use this to apply paint to human skin. [Use this to Work.]",
+		"unique":true
+    },
+	
+	{
+		"id":"tattooed",
+		"label":"Tattooed",
+        "description": "Their skin is marked with paint. [You cannot tattoo them once again.]",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattooed_lostcolours",
+		"label":"Tattooed: Lost Colours",
+        "description": "Their skin is marked with the old past. [The Suppression Bureau might pay attention to their activities.]",
+		"isAspect":true,
+		"induces":[{"id":"tattoo_lostcolours_induction","chance":70}]
+	},
+	
+	{
+		"id":"tattoo_fascination",
+		"label":"Tattoo: Fascination",
+        "description": "The higher one rises, the more one sees.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_dread",
+		"label":"Tattoo: Dread",
+        "description": "We all have our fears. This is one.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_fleeting",
+		"label":"Tattoo: Fleeting Reminiscence",
+        "description": "Once, this was someone's life.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_restlessness",
+		"label":"Tattoo: Restlessness",
+        "description": "Impatience captured by an image.",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_knock",
+		"label":"Tattoo: Knock",
+        "description": "Knock opens the way.",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_lantern",
+		"label":"Tattoo: Lantern",
+        "description": "Lantern lights the path.",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_forge",
+		"label":"Tattoo: Forge",
+        "description": "Forge changes and remakes.",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_edge",
+		"label":"Tattoo: Edge",
+        "description": "Edge battles and conquers.",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_winter",
+		"label":"Tattoo: Winter",
+        "description": "Winter stills and ends.",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_heart",
+		"label":"Tattoo: Heart",
+        "description": "Heart beats and perseveres.",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_grail",
+		"label":"Tattoo: Grail",
+        "description": "Grail thirsts.",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_mothaspect",
+		"label":"Tattoo: Moth",
+        "description": "Moth circles in the dark.",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_secrethistories",
+		"label":"Tattoo: Secret Histories",
+        "description": "The past is uncertain.",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_sevencoiled",
+		"label":"Tattoo: The Seven-Coiled",
+        "description": "The Father of the Mother.",
+		"image": "colours.furious",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_tide",
+		"label":"Tattoo: The Tide",
+        "description": "Eager to consume like waves consume.",
+		"image": "colours.luxurious",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_liminal",
+		"label":"Tattoo: Liminality",
+        "description": "The Mansus was different, once.",
+		"image": "colours.liminal",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_eggunhatching",
+		"label":"Tattoo: The Egg Unhatching",
+        "description": "The sun was warmer, before the Lithomachy began.",
+		"image": "colours.horizon",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_suninsplendour",
+		"label":"Tattoo: The Sun-in-Splendour",
+        "description": "The endless noon.",
+		"image": "colours.splendid",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_wheel",
+		"label":"Tattoo: Wheel",
+        "description": "The past protector of the world?",
+		"image": "colours.endless",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_oldwood",
+		"label":"Tattoo: The Old Wood",
+        "description": "Before, the Wood wasn't darkened.",
+		"image": "colours.wildering",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_flint",
+		"label":"Tattoo: The Flint",
+        "description": "The arts of reshaping were different in the long past.",
+		"image": "colours.golden",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_carapacecross",
+		"label":"Tattoo: Carapace Cross",
+        "description": "This is who we were, and who we might become.",
+		"image": "colours.honeyed",
+		"isAspect":true
+	},
+	
+	{
+		"id":"tattoo_moth",
+		"label":"Tattoo: The Moth",
+        "description": "What was lost?",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_watchman",
+		"label":"Tattoo: The Watchman",
+        "description": "Glory is bright behind him.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_velvet",
+		"label":"Tattoo: The Velvet",
+        "description": "She knows where her secrets are buried.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_malachite",
+		"label":"Tattoo: The Malachite",
+        "description": "Succulent, like a honey smear.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_thunderskin",
+		"label":"Tattoo: The Thunderskin",
+        "description": "Over the heart, slowly beating with it.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_motherofants",
+		"label":"Tattoo: The Mother of Ants",
+        "description": "Almost a new wound on her own.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_witchandsister",
+		"label":"Tattoo: The Witch-and-Sister",
+        "description": "Two of them, inseparable, as always.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_colonel",
+		"label":"Tattoo: The Colonel",
+        "description": "His scars are weapons, just like this tattoo.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_lionsmith",
+		"label":"Tattoo: The Lionsmith",
+        "description": "The skaptodon roars behind him.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_elegiast",
+		"label":"Tattoo: The Elegiast",
+        "description": "In dignified silence.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_beachcrow",
+		"label":"Tattoo: The Beach-Crow",
+        "description": "He sees what is lost.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_meniscate",
+		"label":"Tattoo: The Meniscate",
+        "description": "Her light reveals secrets.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_suninrags",
+		"label":"Tattoo: The Sun-in-Rags",
+        "description": "The last touch for a beautiful conclusion.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_hornedaxe",
+		"label":"Tattoo: The Horned-Axe",
+        "description": "She guards all thresholds.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_madrugad",
+		"label":"Tattoo: The Madrugad",
+        "description": "The chill of a dawn.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_redgrail",
+		"label":"Tattoo: The Red Grail",
+        "description": "It's almost bleeding.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_wolfdivided",
+		"label":"Tattoo: The Wolf-Divided",
+        "description": "Hatred and agony bound and brought onto skin.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_vagabond",
+		"label":"Tattoo: The Vagabond",
+        "description": "Where did she go?",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_sisterandwitch",
+		"label":"Tattoo: The Sister-and-Witch",
+        "description": "Two of them, inseparable, as always.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_flowermaker",
+		"label":"Tattoo: The Flowermaker",
+        "description": "His are the boons of esctasy.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_forgeofdays",
+		"label":"Tattoo: The Forge of Days",
+        "description": "She ends all nights.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_egg",
+		"label":"Tattoo: The Egg",
+        "description": "The world, broken.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_snow",
+		"label":"Tattoo: Snow",
+        "description": "One who is not remembered.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_blackbone",
+		"label":"Tattoo: Blackbone",
+        "description": "The crushing pressure of the utterly strangest realms.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_risingspider",
+		"label":"Tattoo: The Rising Spider",
+        "description": "Ambition of Nowhere, condensed.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_crownedgrowth",
+		"label":"Tattoo: The Crowned Growth",
+        "description": "I shouldn't have done this.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_applebright",
+		"label":"Tattoo: Applebright",
+        "description": "The Flowermaker's Sister, with faint aroma of poison.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_mareinthetree",
+		"label":"Tattoo: The Mare-in-the-Tree",
+        "description": "She longs to steal the observer away.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_witness",
+		"label":"Tattoo: The Witness",
+        "description": "One who watches and does not act.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_chandler",
+		"label":"Tattoo: The Chandler",
+        "description": "The future light.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_ghirbi",
+		"label":"Tattoo: Ghirbi",
+        "description": "The golden head in front of the Stag Door.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_kingcrucible",
+		"label":"Tattoo: King Crucible",
+        "description": "A conflagration, booming with power of change.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_teresa",
+		"label":"Tattoo: Teresa",
+        "description": "She casts no shadow.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_ezeem",
+		"label":"Tattoo: Ezeem, the Second Thirstly",
+        "description": "It pleads for another adjustment.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_amethystimago",
+		"label":"Tattoo: Amethyst Imago",
+        "description": "Amethyst Imago, before her sacrifice.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_hubrisglamore",
+		"label":"Tattoo: Hubris Glamore",
+        "description": "A mason-witch of the past.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_naenia",
+		"label":"Tattoo: Miss Naenia",
+        "description": "The gentlest of The Elegiast's names.",
+		"isAspect":true
+	},
+	
+	
+	{
+		"id":"tattoo_chris",
+		"label":"Tattoo: Christopher Illopoly",
+        "description": "The only readable occultist.",
+		"isAspect":true
+	}
+	
+]
+}
+		

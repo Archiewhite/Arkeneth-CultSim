@@ -1,0 +1,40 @@
+{
+"decks": 
+[
+	{
+		"id":"citysecrets",
+		"extends":["citysecrets"],
+		"label":"City Secrets",
+		"description": "Easily overlooked locations.",
+		"spec$append":["locationtattoo"],
+		"defaultcard": "locationstreetsstrange"
+	},
+	{
+		"id":"paintseye",
+		"label":"Paints to be purchased",
+		"description":"Various occult pigments.",
+		"spec":
+		[
+			"ingredientknockb",
+			"ingredientlanternb",
+			"ingredientforgeb",
+			"ingredientedgeb",
+			"ingredientwinterb",
+			"ingredientheartb",
+			"ingredientgrailb",
+			"ingredientmothb",
+			"ingredientsecrethistoriesb",
+			"ingredientknockb",
+			"ingredientlanternb",
+			"ingredientforgeb",
+			"ingredientedgeb",
+			"ingredientwinterb",
+			"ingredientheartb",
+			"ingredientgrailb",
+			"ingredientmothb",
+			"ingredientsecrethistoriesb"
+		],
+		"resetonexhaustion":true	
+	}
+]
+}
