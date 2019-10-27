@@ -1,0 +1,78 @@
+{"elements":
+[
+			{
+			id: "follower_scar_lantern",
+			label:"Scar: Translucency",
+			description:"Sometimes now they are beautiful beneath their skin. When they bend to the right angle - when their garments fall aside in the moonlight - when the eye is keen - their shape is a perfect revelation.  [Three Scars of the same type will kill a mortal.]",
+			xtriggers: {killmortal:"corpse_scar"},
+			isAspect:true
+			},
+		
+			{
+			id: "follower_scar_moth",
+			label:"Scar: Flexible Aspect",
+			description:"They've worn so many guises. With each new guise it is harder to recall their original face. Even the cartilage softens when their tempers are high. [Three Scars of the same type will normally kill a mortal, but in this case, they will be driven insane.]",
+			xtriggers: {killmortal:"corpse_scar"},
+			isAspect:true
+			},
+		
+			{
+			id: "follower_scar_heart",
+			label:"Scar: Wandering Heart",
+			description:"They have so much life in them. When they sit, their joints burn. I know that if they stop, they might stop for always.  [Three Scars of the same type will kill a mortal.]",
+			xtriggers: {killmortal:"corpse_scar"},
+			isAspect:true
+			},
+			
+			{
+			id: "follower_scar_forge",
+			label:"Scar: Seared Reminder",
+			description:"They have made a mistake, and had change inflicted upon them. This charring is a memory. [Three Scars of the same type will kill a mortal.]",
+			xtriggers: {killmortal:"corpse_scar"},
+			isAspect:true
+			},
+			
+			{
+			id: "follower_scar_grail",
+			label:"Scar: A Richness",
+			description:"Flush with blood, flush with pleasure, flush with thirst. [Three Scars of the same type will normally kill a mortal, but in this case, they will be driven insane.]",
+			xtriggers: {killmortal:"corpse_scar"},
+			isAspect:true
+			},
+			
+			{
+			id: "follower_scar_secrethistories",
+			label:"Scar: A Seam between Histories",
+			description:"This is a testament to a discrepancy. [Three Scars of the same type will normally kill a mortal, but in this case, they will be driven insane.]",
+			xtriggers: {killmortal:"corpse_scar"},
+			isAspect:true
+			},
+			
+			{
+			id: "follower_scar_edge",
+			extends:["follower_scar_edge"],
+			xtriggers: {killmortal:"corpse_scar"},
+			},
+			
+			{
+			id: "follower_scar_knock",
+			extends:["follower_scar_knock"],
+			xtriggers: {killmortal:"corpse_scar"},
+			},
+			
+			{
+			id: "follower_scar_winter",
+			extends:["follower_scar_winter"],
+			xtriggers: {killmortal:"corpse_scar"},
+			},
+			
+			{id: "follower_scar",
+			label:"Scar",
+			description:"The Mother of Salvation remembers. [A follower with seven Scars might die in the Season of Sickness.]",
+			xtriggers: {killmortal:""},
+			isAspect:true
+			}
+			
+]
+}
+		

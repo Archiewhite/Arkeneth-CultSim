@@ -1,0 +1,144 @@
+{"recipes":
+[
+	{
+       	"id": "arcane_lantern_edge_grand",
+		"extends": ["arcane_lantern_edge_grand"],
+		"slots":[{"id":"passion","label":"Give up my Passion","required":{"passion":1, "obsession":1},"greedy":true}]
+    },
+	{
+       	"id": "arcane_lantern_edge_major",
+		"extends": ["arcane_lantern_edge_major"],
+		"slots":[{"id":"passion","label":"Give up my Passion","required":{"passion":1, "obsession":1},"greedy":true}]
+    },
+	{
+       	"id": "arcane_lantern_edge_minor",
+		"extends": ["arcane_lantern_edge_minor"],
+		"slots":[{"id":"passion","label":"Give up my Passion","required":{"passion":1, "obsession":1},"greedy":true}]
+    },
+	{
+       	"id": "arcane_moth_edge_grand",
+		"extends": ["arcane_moth_edge_grand"],
+		"slots":[{"id":"reason","label":"Give up my Reason","required":{"reason":1, "dullness":1},"greedy":true}]
+    },
+	{
+       	"id": "arcane_moth_edge_major",
+		"extends": ["arcane_moth_edge_major"],
+		"slots":[{"id":"reason","label":"Give up my Reason","required":{"reason":1, "dullness":1},"greedy":true}]
+    },
+	{
+       	"id": "arcane_moth_edge_minor",
+		"extends": ["arcane_moth_edge_minor"],
+		"slots":[{"id":"reason","label":"Give up my Reason","required":{"reason":1, "dullness":1},"greedy":true}]
+    },
+	{
+       	"id": "arcane_moth_edge_runaway",
+		"extends": ["arcane_moth_edge_runaway"],
+		"slots":[{"id":"reason","label":"Give up my Reason","required":{"reason":1, "dullness":1},"greedy":true}]
+	},
+	{
+		"id":"dream.decrepitude",
+		"extends":["dream.decrepitude"],
+		"linked$prepend":
+		[
+			{"id":"dream.decrepitude.amarantine", "chance":42}
+		]
+	},	
+	{
+		"id":"dream.obsession",
+		"actionId":"dream",
+		"label":"Desperate Measures",
+		"startdescription":"My passions swallow my mind. My ideas sabotage themselves. Perhaps if I were to consume some exotic substance it might quell the Great Mother's call. But it seems unlikely.",
+		"requirements":{"obsession":1,"ingredient":1},
+		"warmup":30,
+		"craftable":true,
+		"linked":
+		[
+			{"id":"dream.obsession.amarantine", "chance":42},
+			{"id":"dream.obsession.ingredientgrailf", "chance":100},
+			{"id":"dream.obsession.failure", "chance":100}
+		]
+	},
+	{
+		"id":"dream.dullness",
+		"actionId":"dream",
+		"label":"Desperate Measures",
+		"startdescription":"I can't think clearly. The Wolf is at my mind's door. Perhaps if I were to consume some exotic substance it might let the Glory in. But it seems unlikely.",
+		"requirements":{"dullness":1,"ingredient":1},
+		"warmup":30,
+		"craftable":true,
+		"linked":
+		[
+			{"id":"dream.dullness.amarantine", "chance":42},
+			{"id":"dream.dullness.ingredientmothf", "chance":100},
+			{"id":"dream.dullness.failure", "chance":100}
+		]
+	},
+	{
+		"id":"dream.decrepitude.amarantine",
+		"actionId":"dream",
+		"label":"Lilyking's Savour",
+		"startdescription":"Even in this blighted history, these drops can renew flesh. I will wake up in a better condition.",
+		"requirements":{"decrepitude":1, "ingredientgraild":1},
+		"effects":{"ingredientgraild":-1, "fascination":3, "mystique":1},
+		"aspects":{"tohealth":1},
+		"warmup":30
+	},
+	{
+		"id":"dream.obsession.amarantine",
+		"actionId":"dream",
+		"label":"Lilyking's Savour",
+		"startdescription":"This sweetest nectar can satisfy even the deepest thirsts. I will wake up in a better condition.",
+		"requirements":{"obsession":1, "ingredientgraild":1},
+		"effects":{"ingredientgraild":-1, "fascination":3, "mystique":1},
+		"aspects":{"topassion":1},
+		"warmup":30
+	},
+	{
+		"id":"dream.dullness.amarantine",
+		"actionId":"dream",
+		"label":"Lilyking's Savour",
+		"startdescription":"Tonight, I dream of the Flowermaker's promise and the Glory he descended from. I will wake up in a better condition.",
+		"requirements":{"dullness":1, "ingredientgraild":1},
+		"effects":{"ingredientgraild":-1, "fascination":3, "mystique":1},
+		"aspects":{"toreason":1},
+		"warmup":30
+	},
+	{
+		"id":"dream.dullness.ingredientmothf",
+		"actionId":"dream",
+		"label":"The First Sacrifice",
+		"startdescription":"There are only a few drops of this liquid. But that should be more than enough. I clip a few locks of my hair and break the scissors. This will draw his attention.",
+		"description":"The Moth always answers YES to the question that is the Glory, and I can feel it now. My mind is clear once more.",
+		"requirements":{"ingredientmothf":1,"dullness":1},
+		"effects":{"ingredientmothf":-1,"restlessness":1,"mystique":1},
+		"aspects":{"toreason":1},
+		"warmup":30
+	},
+	{
+		"id":"dream.obsession.ingredientgrailf",
+		"actionId":"dream",
+		"label":"The Birth That Is Not Birth",
+		"startdescription":"It's juicy but stringy. I need to chew it thoroughly.",
+		"description":"This caul is a commemoration of birth, where pain and pleasure meet, and through that conjunction, my unquenchable desire is quenched.",
+		"requirements":{"ingredientgrailf":1,"obsession":1},
+		"effects":{"ingredientgrailf":-1,"restlessness":1,"mystique":1},
+		"aspects":{"topassion":1},
+		"warmup":30
+	},
+	{
+		"id":"dream.obsession.failure",
+		"actionId":"dream",
+		"label":"Only The Strangest Taste",
+		"startdescription":"My obsessions are the same. I have gained no benefit - except, I suppose, hard-won knowledge.",
+		"effects":{"ingredient":-1,"erudition":1}
+	},
+	{
+		"id":"dream.dullness.failure",
+		"actionId":"dream",
+		"label":"Only The Strangest Taste",
+		"startdescription":"My mind is the same. I have gained no benefit - except, I suppose, hard-won knowledge.",
+		"effects":{"ingredient":-1,"erudition":1}
+	}
+]
+}
+		

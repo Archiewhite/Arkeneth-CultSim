@@ -1,0 +1,77 @@
+{"elements":
+[
+	{
+		"id": "obsession",
+		"label":"Obsession",
+		"description": "My desires are intense. Too intense to focus them at all. [With effort, Obsession can be restored to Passion.]",
+		"aspects":{"ability":1, "grail":1},
+		"xtriggers":{"toreason":"concentration", "topassion":"passionexhausted"},
+		"slots":[{"id":"consume","label":"Consume","required":{"ingredient":1},"forbidden":{"poison":1}, "actionId":"dream"}]
+	},
+	{
+	
+		"id": "dullness",
+		"label":"Dullness",
+		"description": "The light of Glory no longer illuminates my mind. When I focus, I can hear something howl. [With effort, Dullness can be restored to Reason.]",
+		"aspects":{ability:1, edge:1},
+		"xtriggers":{toreason:concentration, topassion:passionexhausted},
+		"slots":[{"id":"consume","label":"Consume","required":{"ingredient":1},"forbidden":{"poison":1}, "actionId":"dream"}]
+	},
+	{
+            
+		"id": "damagepassion",
+
+		"extends":["damagepassion"],
+		"description": "Passion will become Obsession."
+	},
+	{
+            
+		"id": "damagereason",
+
+		"extends":["damagereason"],
+		"description": "Reason will become Dullness."
+	},
+
+	{
+		"id": "disillusionment",
+
+	        "extends": ["disillusionment"],
+
+		xtriggers:{scarability:scar_moth,toreason:concentration,damagepassion:obsession}
+	},
+
+	{
+
+        	"id": "passionexhausted",
+
+            	"extends": ["passionexhausted"],
+		xtriggers:{scarability:scar_moth,toreason:concentration,damagepassion:obsession}
+	},
+
+        {
+            
+		"id": "reason",
+
+        	"extends": ["reason"],
+		xtriggers: {damagereason: dullness,fatiguing:concentration,employment:concentration,job:concentration,topassion:passion,ritual:concentration,society:concentration,scarability:scar_lantern}
+				
+        
+	},
+
+	{
+
+            	id: "concentration",
+		extends:["concentration"],	
+		xtriggers:{scarability:scar_lantern,topassion:passionexhausted,damagereason:dullness}
+	},
+	{
+
+         	id: "passion",
+	        extends: ["passion"],
+
+            	xtriggers: {damagepassion:obsession,plead:disillusionment,fatiguing:passionexhausted,employment:passionexhausted,job:passionexhausted,toreason:reason,ritual:passionexhausted,society:passionexhausted}
+        
+	}
+]
+}
+		

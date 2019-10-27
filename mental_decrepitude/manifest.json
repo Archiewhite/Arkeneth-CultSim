@@ -1,0 +1,8 @@
+{
+    "name": "Mental Decrepitude",
+    "author": "Arkeneth",
+    "version": "1.1.0",
+
+    "description": "Adds Dullness and Obsession, which play the role of Decrepitude for Reason and Passion.",
+    "description_long": "Changes recipes which destroy mental Ability cards to damage them instead. These can be repaired via conversion recipes, or specific ingredient application."
+}

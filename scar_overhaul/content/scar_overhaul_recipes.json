@@ -1,0 +1,508 @@
+{
+"recipes": [
+
+{
+	"id":"talktofollower_heal",
+	"extends": ["talktofollower_heal"],
+	"linked":
+	[
+		{"id":"givescar_secrethistories","chance":10},
+		{"id":"givescar_lantern","chance":12},
+		{"id":"givescar_forge","chance":14},
+		{"id":"givescar_edge","chance":16},
+		{"id":"givescar_winter","chance":20},
+		{"id":"givescar_heart","chance":25},
+		{"id":"givescar_moth","chance":33},
+		{"id":"givescar_grail","chance":50},
+		{"id":"givescar_knock","chance":100}
+	]
+},	
+
+{
+	"id": "talktofollower",
+	"extends": ["talktofollower"],
+	"alternativerecipes$append": 
+	[
+		{"id":"follower_nectarheal", "chance":100},
+		{"id":"follower_nectarheal_noscar", "chance":100},
+		{"id":"follower_scarification", "chance":100},
+		{"id":"follower_scarification_overscarred", "chance":100}
+	]
+},
+
+{
+	"id":"givescar_lantern",
+	"actionId":"talk",
+	"label":"Mirror-Queen's Lament",
+	"description":"The wound is healed, but their skin is now marked with a scar - a scar not unlike the one which marks Meniscate's face.",
+	"mutations":
+	[
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar_lantern","mutationLevel":1,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"lantern","mutationLevel":2,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar","mutationLevel":1,"additive":true}
+	],
+	"linked":[{"id":"deathscar_lantern","chance":100}]
+},
+
+{
+	"id":"givescar_forge",
+	"actionId":"talk",
+	"label":"Malleary's Memory",
+	"description":"The charred skin will mend itself, eventually, but will never lose that heated touch.",
+	"mutations":
+	[
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar_forge","mutationLevel":1,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"forge","mutationLevel":2,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar","mutationLevel":1,"additive":true}
+	],
+	"linked":[{"id":"deathscar_forge","chance":100}]
+},
+
+{
+	"id":"givescar_edge",
+	"extends": ["givescar_edge"],
+	"mutations":
+	[
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar_edge","mutationLevel":1,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"edge","mutationLevel":2,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar","mutationLevel":1,"additive":true}
+	],
+	"linked":[{"id":"deathscar_edge","chance":100}]
+},
+
+{
+	"id":"givescar_winter",
+	"extends": ["givescar_winter"],
+	"mutations":
+	[
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar_winter","mutationLevel":1,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"winter","mutationLevel":2,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar","mutationLevel":1,"additive":true}
+	],
+	"linked":[{"id":"deathscar_winter","chance":100}]
+},
+
+{
+	"id":"givescar_heart",
+	"actionId":"talk",
+	"label":"The Thunderskin's Agony",
+	"description":"Their arteries sing, their veins burn, their skin ripples, but their wound is finally healed. The scar remains. If I keep pushing them any further their body might fail them.",
+	"mutations":
+	[
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar_heart","mutationLevel":1,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"heart","mutationLevel":2,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar","mutationLevel":1,"additive":true}
+	],
+	"linked":[{"id":"deathscar_heart","chance":100}]
+},
+
+{
+	"id":"givescar_grail",
+	"actionId":"talk",
+	"label":"Ring-Yew's Delight",
+	"description":"The wound is healed. Their skin is redder than before, as are their passions.",
+	"mutations":
+	[
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar_grail","mutationLevel":1,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"grail","mutationLevel":2,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar","mutationLevel":1,"additive":true}
+	],
+	"linked":[{"id":"deathscar_grail","chance":100}]
+},
+
+{
+	"id":"givescar_moth",
+	"actionId":"talk",
+	"label":"The Chrysalis' Strain",
+	"description":"They wince from pain, and with every new expression their features ripple like water. The wound is healed, but if they are not careful they might entirely dissolve.",
+	"mutations":
+	[
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar_moth","mutationLevel":1,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"moth","mutationLevel":2,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar","mutationLevel":1,"additive":true}
+	],
+	"linked":[{"id":"madnessscar_moth","chance":100}]
+},
+
+{
+	"id":"givescar_knock",
+	"extends": ["givescar_knock"],
+	"mutations":
+	[
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar_knock","mutationLevel":1,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"knock","mutationLevel":2,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar","mutationLevel":1,"additive":true}
+	],
+	"linked":[{"id":"deathscar_knock","chance":100}]
+},
+
+{
+	"id":"givescar_secrethistories",
+	"actionId":"talk",
+	"label":"Hydra's Neck",
+	"description":"The wound has fully resolved itself without a trace, but sometimes it stains clothes with blood, as if it has never been.",
+	"mutations":
+	[
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar_secrethistories","mutationLevel":1,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"secrethistories","mutationLevel":2,"additive":true},
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar","mutationLevel":1,"additive":true}
+	],
+	"linked":[{"id":"deathscar_secrethistories","chance":100}]
+},
+
+{
+	"id":"deathscar_lantern",
+	"actionId":"talk",
+	"label":"Death: a Chilly Dawn",
+	"requirements":{"follower_scar_lantern":3},
+	"description":"At dawn, they pass from Meniscate to Madrugad. [Your Follower acquired three Lantern-Scars, and died.]",
+	"aspects":{"killmortal":1}
+},
+
+{
+	"id":"deathscar_forge",
+	"actionId":"talk",
+	"label":"Death: a Conflagration",
+	"requirements":{"follower_scar_forge":3},
+	"description":"The fires claim them, at last. [Your Follower acquired three Forge-Scars, and died.]",
+	"aspects":{"killmortal":1}
+},
+
+{
+	"id":"deathscar_heart",
+	"actionId":"talk",
+	"label":"Death: a Collapse",
+	"requirements":{"follower_scar_heart":3},
+	"description":"They were resilient; but in the end, even the most resilient burn out.[Your Follower acquired three Heart-Scars, and died.]",
+	"aspects":{"killmortal":1}
+},
+
+{
+	"id":"deathscar_grail",
+	"actionId":"talk",
+	"label":"Madness: Bliss",
+	"requirements":{"follower_scar_grail":3},
+	"description":"I find them smiling in pleasure, unaware of my surroundings, unaware of anything but themselves [Your Follower acquired three Moth-Scars, and was driven insane.]",
+	"aspects":{"killmortal":1}
+},
+
+{
+	"id":"madnessscar_moth",
+	"actionId":"talk",
+	"label":"Madness: a Dissolution",
+	"requirements":{"follower_scar_moth":3},
+	"description":"They no longer recognise me. They no longer recognise themselves. [Your Follower acquired three Moth-Scars, and was driven insane.]",
+	"aspects":{"derangemortal":1}
+},
+
+{
+	"id":"deathscar_secrethistories",
+	"actionId":"talk",
+	"label":"Madness: Lernea's Fall",
+	"requirements":{"follower_scar_secrethistories":3},
+	"description":"Some discrepancies are too much for mortal mind to process. [Your Follower acquired three Secret Histories-Scars, and was driven insane.]",
+	"aspects":{"killmortal":1}
+},
+
+{
+	"id":"follower_scarification",
+	"actionId": "talk",
+	"label": "Add a scar to this one?",
+	"startdescription": "I can use a Skaptodon Fang to add a scar to my follower. They will comply, but there's no guarantee that they will be happy about that. [You will need a lore fragment of exactly the fourth intensity to proceed.]",
+	"requirements":
+	{
+		"follower":1,
+		"follower_scar":-7,
+		"ingredientedgef":1
+	},
+	"effects":{"ingredientedgef":-1},
+	"linked":
+	[
+		{"id":"follower_scarification_picklore", "chance":100}
+	]
+},
+
+{
+	"id":"follower_scarification_overscarred",
+	"actionId": "talk",
+	"label": "Add a scar to this one?",
+	"startdescription": "I can use a Skaptodon Fang to add a scar to my follower. This one, however, is already too scarred to take another scar upon themselves. [Their scars already can kill them in the Season of Sickness.]",
+	"requirements":
+	{
+		"follower":1,
+		"follower_scar":7,
+		"ingredientedgef":1
+	}
+},
+
+{
+	"id":"follower_scarification_picklore",
+	"actionId": "talk",
+	"label": "Choose suitable lore?",
+	"slots": 
+	[{
+		"id":"picklore",
+		"label":"Lore",
+		"required": 
+		{
+			"fragmentknockb":1,
+			"fragmentlanternb":1,
+			"fragmentforgeb":1,
+			"fragmentedgeb":1,
+			"fragmentwinterb":1,
+			"fragmentheartb":1,
+			"fragmentgrailb":1,
+			"fragmentmothb":1,
+			"fragmentsecrethistoriesb":1
+		}
+	}],
+	"alternativerecipes":
+	[
+		{"id":"follower_scarification_nolore", "chance":100},
+		{"id":"follower_scarification_edgecult", "chance":100},
+		{"id":"follower_scarification_knockcult", "chance":100},
+		{"id":"follower_scarification_unsuitable", "chance":100}
+	],
+	"warmup":30
+},
+
+{
+	"id":"follower_scarification_edgecult",
+	"actionId":"talk",
+	"extantreqs":{"cultedge_1":1},
+	"label":"Law of the Bright Edge",
+	"startdescription":"We venerate the Colonel, who wields his scars as weapons. This follower is eager to equip themselves.",
+	"linked":
+	[
+		{"id":"follower_scarring", "chance":100}
+	]
+},
+
+{
+	"id":"follower_scarification_knockcult",
+	"actionId":"talk",
+	"extantreqs":{"cultedge_1":1},
+	"label":"Law of the Holy Wound",
+	"startdescription":"We venerate the Mother of Ants, who looks kindly upon wounds. This follower is relieved to know that their wound isn't mistreated.",
+	"linked":
+	[
+		{"id":"follower_scarring", "chance":100}
+	]
+},
+
+{
+	"id":"follower_scarification_unsuitable",
+	"actionId":"talk",
+	"label":"Another scar, added",
+	"startdescription":"They are not all too eager to be forcefully scarred.",
+	"linked":
+	[
+		{"id":"follower_scarification_unsuitable_fine", "chance":66},
+		{"id":"follower_scarification_unsuitable_pissed", "chance":100}
+	]
+},
+
+{
+	"id":"follower_scarification_unsuitable_fine",
+	"actionId":"talk",
+	"label":"Another scar, added",
+	"startdescription":"They are not all too eager to be forcefully scarred. But they know that such scars make their owner stronger.",
+	"linked":
+	[		
+		{"id":"follower_scarring", "chance":100}
+	]
+},
+
+{
+	"id":"follower_scarification_unsuitable_pissed",
+	"actionId":"talk",
+	"label":"Another scar, added",
+	"startdescription":"They are not all too eager to be forcefully scarred, and even though they know that scars like these improve those who wield them, they're going to harbour a grudge. [This one has gained Resentment.]",
+	"mutations":
+	[{"filterOnAspectId":"follower","mutateAspectId":"resentment","mutationLevel":1,"additive":true}],
+	"linked":
+	[
+		{"id":"follower_scarring", "chance":100}
+	]
+},
+
+{
+	"id":"follower_scarring",
+	"actionId":"talk",
+	"label":"A new scar",
+	"startdescription":"Scarring in process...",
+	"alternativerecipes":
+	[
+		{"id":"follower_scarification_knock", "chance":100},
+		{"id":"follower_scarification_lantern", "chance":100},
+		{"id":"follower_scarification_forge", "chance":100},
+		{"id":"follower_scarification_edge", "chance":100},
+		{"id":"follower_scarification_winter", "chance":100},
+		{"id":"follower_scarification_heart", "chance":100},
+		{"id":"follower_scarification_grail", "chance":100},
+		{"id":"follower_scarification_moth", "chance":100},
+		{"id":"follower_scarification_secrethistories", "chance":100}
+	],
+	"warmup":5
+},
+
+{
+	"id":"follower_scarification_nolore",
+	"actionId":"talk",
+	"label":"No lore?",
+	"startdescription":"I cannot scar my Follower in an appropriate manner without Lore. [Add a suitable Lore fragment of the fourth intensity.]",
+	"requirements":{"lore":-1}
+},
+
+{
+	"id":"follower_scarification_knock",
+	"actionId":"talk",
+	"label":"A new scar",
+	"startdescription":"Scarring in process...",
+	"requirements":{"fragmentknockb":1},
+	"linked":[{"id":"givescar_knock", "chance":100}]
+},
+
+{
+	"id":"follower_scarification_lantern",
+	"actionId":"talk",
+	"label":"A new scar",
+	"startdescription":"Scarring in process...",
+	"requirements":{"fragmentlanternb":1},
+	"linked":[{"id":"givescar_lantern", "chance":100}]
+},
+
+{
+	"id":"follower_scarification_forge",
+	"actionId":"talk",
+	"label":"A new scar",
+	"startdescription":"Scarring in process...",
+	"requirements":{"fragmentforgeb":1},
+	"linked":[{"id":"givescar_forge", "chance":100}]
+},
+
+{
+	"id":"follower_scarification_edge",
+	"actionId":"talk",
+	"label":"A new scar",
+	"startdescription":"Scarring in process...",
+	"requirements":{"fragmentedgeb":1},
+	"linked":[{"id":"givescar_edge", "chance":100}]
+},
+
+{
+	"id":"follower_scarification_winter",
+	"actionId":"talk",
+	"label":"A new scar",
+	"startdescription":"Scarring in process...",
+	"requirements":{"fragmentwinterb":1},
+	"linked":[{"id":"givescar_winter", "chance":100}]
+},
+
+{
+	"id":"follower_scarification_heart",
+	"actionId":"talk",
+	"label":"A new scar",
+	"startdescription":"Scarring in process...",
+	"requirements":{"fragmentheartb":1},
+	"linked":[{"id":"givescar_heart", "chance":100}]
+},
+
+{
+	"id":"follower_scarification_grail",
+	"actionId":"talk",
+	"label":"A new scar",
+	"startdescription":"Scarring in process...",
+	"requirements":{"fragmentgrailb":1},
+	"linked":[{"id":"givescar_grail", "chance":100}]
+},
+
+{
+	"id":"follower_scarification_moth",
+	"actionId":"talk",
+	"label":"A new scar",
+	"startdescription":"Scarring in process...",
+	"requirements":{"fragmentmothb":1},
+	"linked":[{"id":"givescar_moth", "chance":100}]
+},
+
+{
+	"id":"follower_scarification_secrethistories",
+	"actionId":"talk",
+	"label":"A new scar",
+	"startdescription":"Scarring in process...",
+	"requirements":{"fragmentsecrethistoriesb":1},
+	"linked":[{"id":"givescar_secrethistories", "chance":100}]
+},
+
+{
+	"id":"follower_nectarheal",
+	"actionId":"talk",
+	"label":"Offer an uncanny remedy?",
+	"requirements": {"follower":1, "ingredientgraild":1, "follower_scar":1},
+	"startdescription":"This gift of the Lilyking cannot make them immortal. Not in this history. But, perhaps, it still retains a shred of its former power. [This might relieve a Scar. It will not affect principle scores or their associated Scars.]",
+	"linked":
+	[
+		{"id":"nectarheal_success", "chance":33},
+		{"id":"nectarheal_failure", "chance":100}
+	]
+},
+
+{
+	"id":"follower_nectarheal_noscar",
+	"actionId":"talk",
+	"label":"A remedy for nothing?",
+	"requirements": {"follower":1, "ingredientgraild":1, "follower_scar":-1},
+	"startdescription":"This gift of the Lilyking cannot make them immortal, but it can relieve old wounds. This one has no such wounds. [This follower has no scars to relieve.]"
+},
+
+{
+	"id":"nectarheal_success",
+	"actionId":"talk",
+	"label":"Sweet delight",
+	"description":"The ampoule only holds a few drops. This was enough.",
+	"effects":{"ingredientgraild":-1},
+	"mutations":
+	[
+		{"filterOnAspectId":"follower","mutateAspectId":"follower_scar","mutationLevel":-1,"additive":true}
+	]
+},
+
+{
+	"id":"nectarheal_failure",
+	"actionId":"talk",
+	"label":"Sweet delight",
+	"description":"The ampoule only holds a few drops. This wasn't enough. Perhaps more will do it. More.",
+	"effects":{"ingredientgraild":-1}
+},
+
+{
+	"id": "sickness",
+	"extends":["sickness"],
+	"slots": 
+	[{
+		"id":"Affliction",
+		"label":"Health",
+		"required": {"health":1, "fatigue":1, "follower_wound":1, "follower_scar":7},
+		"forbidden": {"summoned": 1, "corpse": 1, "notoriety": 1},
+		"greedy": true
+	}],
+	"alternativerecipes$prepend":
+	[
+		{"id": "deathoftheoverscarredfollower","chance":100}
+	]
+},
+
+{
+	"id":"deathoftheoverscarredfollower",
+	"actionId": "time",
+	"label":"My Follower is dying.",
+	"requirements":{"follower_scar":7},
+	"startdescription": "Their scars became too much for them to bear.",
+	"description": "Their death is almost peaceful. Perhaps, once they pass into the Mansus, the Mother of Ants will take them in.",
+	"aspects":{"killmortal":1},
+	"effects":{"seasonsickness":-1}
+}
+
+]
+}

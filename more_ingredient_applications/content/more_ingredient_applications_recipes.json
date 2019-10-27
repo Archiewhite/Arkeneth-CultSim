@@ -1,0 +1,222 @@
+{
+"recipes": 
+	[
+		{
+			"id": "unpaid_talk",
+			"label":"Pay a Compelled hireling?",
+			"actionId": "talk",
+			"requirements": {"unpaid":1},
+			"slots": [{"id":"Money","label":"Money","description":"Money to be paid.","required":{"funds":1}}],
+			"startdescription":"No money, no work.",
+			"alternativerecipes":
+			[
+				{"id": "pay_compelled_hireling", "chance":100},
+				{"id": "pay_compelled_hireling_no_payment", "chance":100},
+			],
+			"warmup": 60,
+			"craftable": true
+		},
+		{
+			"id": "talktofollower",
+			"extends": ["talktofollower"],
+			"alternativerecipes$append": 
+			[
+				
+				{"id": "follower_offer_azoth_inexperienced","chance":100},
+				{"id": "follower_offer_azoth","chance":100},
+				{"id": "follower_offer_wolfsnow","chance":100},
+				{"id": "corpse_destroy_resolver","chance": 100},
+				{"id": "compel_hireling_leathy","chance":100}
+
+			],
+			"alternativerecipes$prepend": 
+			[
+				{"id": "evidence_destroy_doorbreaker","chance": 100}
+			]
+		},
+		{
+			"id": "compel_hireling_leathy",
+			"actionId": "talk",
+			"label": "Intoxicate them with Leathy?",
+			"requirements":
+			{
+				"hireling": 1,
+				"ingredientmothd": 1,
+				"compelled": -1
+			},
+			"startdescription": "If I offer them liquor and words strong enough, they might consider working for me at a more permanent position.",
+			"description": "'Alright, boss.'",
+			"effects": 
+			{
+				"ingredientmothd":-1
+			},
+			"aspects":
+			{compel:1}
+		},
+		{
+			"id": "pay_compelled_hireling_no_payment",
+			"actionId": "talk",
+			"label": "Offer this Compelled hireling their payment?",
+			"requirements":
+			{
+				"unpaid":1,
+				"funds": -1,
+			},
+			"startdescription": "This Hireling requires payment for their services. Without it, they will not work."
+		},
+		{
+			"id": "pay_compelled_hireling",
+			"actionId": "talk",
+			"label": "Offer this Compelled hireling their payment.",
+			"requirements":
+			{
+				"unpaid":1,
+				"funds": 1
+			},
+			"startdescription": "This Hireling requires payment for their services. Without it, they will not work.",
+			"description": "'Alright. Same terms as before.'",
+			"aspects":
+			{"hiring":1},
+			"effects":
+			{
+				"funds":-1
+			}
+		},
+		{
+			"id": "follower_offer_wolfsnow",
+			"actionId": "talk",
+			"label": "Offer Wolf-Snow?",
+			"requirements":
+			{
+				"follower": 1,
+				"ingredientwinterd": 1,
+				"resolver": -1
+			},
+			"startdescription": "This will allow my follower to destroy corpses on demand without leaving any Notoriety behind.",
+			"effects": 
+			{
+				"ingredientwinterd":-1
+			},
+			"mutations":
+			[
+				{"filterOnAspectId": "follower", "mutateAspectId": "resolver", "mutationLevel":1, "additive":false}
+			]
+		},
+		{
+			"id": "follower_offer_azoth_inexperienced",
+			"actionId": "talk",
+			"label": "Offer Azoth?",
+			"requirements":
+			{
+				"follower": 1,
+				"disciple": -1,
+				"ingredientknockf": 1,
+				"doorbreaker": -1
+			},
+			"startdescription": "This would allow my follower to break into strongboxes and reliably destroy evidence, but it's probably not the best idea to give such a volatile substance to a mere believer. [You cannot give Azoth to followers who are yet to reach the Disciple rank.]"
+		},
+		{
+			"id": "follower_offer_azoth",
+			"actionId": "talk",
+			"label": "Offer Azoth?",
+			"requirements":
+			{
+				"disciple": 1,
+				"ingredientknockf": 1,
+				"doorbreaker": -1
+			},
+			"startdescription": "This will allow my follower to break into strongboxes and reliably destroy evidence, but has its risks.",
+			"effects": 
+			{
+				"ingredientknockf":-1
+			},
+			"mutations":
+			[
+				{"filterOnAspectId": "follower", "mutateAspectId": "doorbreaker", "mutationLevel":1, "additive":false}
+			]
+		},
+		{
+			"id": "corpse_destroy_resolver",
+			"label": "Ask a Wolf-Snow-equipped minion to destroy a corpse",
+			"actionId":"talk",
+			"startdescription":"It will take some time...",
+			"description":"It is done. Frost marks the glass.",
+			"requirements": {"follower":1,"resolver":1,"corpse":1},
+			"effects": {"corpse":-1, "influencewinterc":1}
+		},
+		{
+			"id": "evidence_destroy_doorbreaker",
+			"label": "Send an Azoth-equipped minion to destroy evidence",
+			"actionId":"talk",
+			"startdescription":"They are guaranteed to succeed. But there is a different risk in play.",
+			"description":".",
+			"requirements": {"follower":1,"doorbreaker":1,"evidencelevel":1},
+			"linked": 
+			[
+			{"id":"doorbreaking_consequences","chance":50},
+			{"id":"doorbreaking_no_consequences","chance":100}
+			]
+	  	  
+		},
+		{
+			"id": "doorbreaking_consequences",
+			"label": "A mishap!",
+			"actionId":"talk",
+			"startdescription": "My minion has succeeded, but accidentally wounded themselves with Azoth. Their wound is bandaged, but it will leave a scar.",
+			"effects": {"evidencelevel":-1},
+			"linked": [{"id":"givescar_knock", "chance":100}],
+			"warmup":10
+		},
+		{
+			"id": "doorbreaking_no_consequences",
+			"label": "Success!",
+			"actionId":"talk",
+			"startdescription": "My minion has succeeded.",
+			"effects": {"evidencelevel":-1},
+			"warmup":10	  
+		},
+		{
+			"id":"curse_nowhere_attempt_mitigation",
+			"extends":["curse_nowhere_attempt_mitigation"],
+			"slots": 
+			[
+				{"id":"Protection","label":"Protection","required":{"influenceheartg":1, "ingredientlanternf":1}}
+			],
+			"alternativerecipes$append":
+			[
+				{"id":"worms_mitigation_ichor","chance":100}
+			]
+		},
+		{
+			"id":"worms_mitigation_ichor",
+			"label":"Blood of the Watchman?",
+			"actionId":"curse_nowhere",
+			"requirements":{"ingredient":1},
+			"effects":{"ingredient":-1},
+			"startdescription": "The Watchman is not compassionate. He will show no mercy to anyone, let alone this mortal. But, maybe, his radiance will burn the Worms away - and even then, it will not be pleasant.",
+			"linked":
+			[
+				{"id":"worms_mitigation_ichor_success", "chance":50},
+				{"id":"worms_mitigation_ichor_failure", "chance":100}
+			]
+		},
+		{
+			"id":"worms_mitigation_ichor_success",
+			"label":"Glory's Salvation",
+			"actionId":"curse_nowhere",
+			"mutations":
+			[
+				{"filterOnAspectId": "follower", "mutateAspectId": "follower_wound", "mutationLevel":2, "additive":true}
+			],
+			"description": "They bend over and vomit. The Worms are gone, but my follower is almost dead. They need immediate medical attention."
+		},
+		{
+			"id":"worms_mitigation_ichor_failure",
+			"label":"Glory's Due",
+			"actionId":"curse_nowhere",
+			"effects":{"notoriety":1,"dread":1},
+			"aspects":{"killmortal":1},
+			"description": "They are dead, partially hollowed out by Worms, partially tainted by the Ichor. There's nothing to be done."
+		}
+	]
+}

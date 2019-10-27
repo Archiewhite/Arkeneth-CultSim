@@ -1,0 +1,204 @@
+{"elements":
+[
+		{
+			id: "doorbreaker",
+			label:"Doorbreaker",
+			description:"They now possess a canister of Azoth. [They will always succeed at destroying evidence, but there is risk of them misapplying the substance and suffering a Knock-scar.]",
+			isAspect:true
+		},
+		{
+			id: "resolver",
+			label:"Resolver",
+			description:"They now possess a canister of Wolf-Snow. [They now can liberally destroy corpses, leaving behind An Icy Atmosphere.]",
+			isAspect:true
+		},
+		{
+			id: "compelled",
+			label:"Compelled",
+			description:"I have convinced them to join my cause using my charisma and a bottle of strong liquor. [They will still require occasional payment, but won't permanently leave your service if not paid in time.]",
+			isAspect: true
+		},
+		{
+			id: "compel",
+			label:"Compel a Hireling",
+			description: "Hirelings will be compelled to work on a more permanent basis.",
+			isAspect: true
+		},
+		{
+			id: "unpaid",
+			label:"Unpaid",
+			description: "This Compelled hireling requires payment.",
+			isAspect: true
+		},
+		{
+			id: "thugedgeminor",
+			extends: ["thugedgeminor"],
+			xtriggers$extend: {compel:aide_edgeminor}
+		},
+		{
+			id: "thugmothminor",
+			extends: ["thugmothminor"],
+			xtriggers$extend: {compel:aide_mothminor}
+        },
+		{
+			id: "thugedge",
+			extends: ["thugedge"],
+			xtriggers$extend: {compel:aide_edge}
+        },
+		{
+			id: "thugforgeedge",
+			extends: ["thugforgeedge"],
+			xtriggers$extend: {compel:aide_forgeedge}
+        },
+		{
+			id: "thugknock",
+			extends: ["thugknock"],
+			xtriggers$extend: {compel:aide_knock}
+        },
+		{
+			id: "thuglanternmoth",
+			extends: ["thuglanternmoth"],
+			xtriggers$extend: {compel:aide_lanternmoth}
+        },
+		{
+			id: "thugmoth",
+			extends: ["thugmoth"],
+			xtriggers$extend: {compel:aide_moth}
+        },
+		{
+			id: "aide_edgeminor",
+            label: "A Hulking Fellow",
+            aspects:
+            {mortal: 1,hireling:1,follower:1,edge:3,compelled:1},
+              description: "'I get the job done.' [This Hireling may be useful for some Expeditions, and can help with Hunters and Annoyances.]",
+			xtriggers: {hiring: aide_edgeminor,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p},
+			lifetime:600,
+			decayTo: "aide_edgeminor_unpaid"
+        },
+		{
+			id: "aide_mothminor",
+            label: "A Shifty Woman",
+            aspects:
+            {mortal: 1,hireling:1,follower:1,moth:3,compelled:1},
+              description: "'I get the job done.' [This Hireling may be useful for some Expeditions, and can help with Hunters and Annoyances.]",
+			xtriggers: {hiring: aide_mothminor,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p},
+			lifetime:600,
+			decayTo: "aide_mothminor_unpaid"
+        },
+		{
+			id: "aide_edge",
+            label: "Professional Muscle",
+            aspects:
+            {mortal: 1,hireling:1,follower:1,edge:5,compelled:1},
+              description: "'I'll break them in half.' [This Hireling may be useful for some Expeditions, and can help with Hunters and Annoyances.]",
+			xtriggers: {hiring: aide_edge,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p},
+			lifetime:600,
+			decayTo: "aide_edge_unpaid"
+        },
+		{
+			id: "aide_forgeedge",
+            label: "A Bomb-Maker",
+            aspects:
+            {mortal: 1,hireling:1,follower:1,forge:5,edge:3,compelled:1},
+            description: "'Perhaps we shouldn't discuss politics just yet.' [This Hireling may be useful for some Expeditions, and can help with Hunters and Annoyances.]",
+			xtriggers: {hiring:aide_forgeedge,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p},
+			lifetime:600,
+			decayTo: "aide_forgeedge_unpaid"
+        },
+		{
+			id: "aide_knock",
+            label: "An Entry Consultant",
+            aspects:
+            {mortal: 1,hireling:1,follower:1,knock:5,compelled:1},
+            description: "'I'm good with doors. [This Hireling may be useful for some Expeditions.]'",
+			xtriggers: {hiring:aide_knock,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p},
+			lifetime:600,
+			decayTo: "aide_knock_unpaid"
+        },
+		{
+			id: "aide_lanternmoth",
+            label: "A Fortune-Teller",
+            aspects:
+            {mortal: 1,hireling:1,follower:1,lantern:5,moth:3,compelled:1},
+            description: "'I see things. I see that you're different.' [This Hireling may be useful for some Expeditions, and can help with Hunters and Annoyances.]",
+			xtriggers: {hiring:aide_lanternmoth,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p},
+			lifetime:600,
+			decayTo: "aide_lanternmoth_unpaid"
+        },
+		{
+			id: "aide_moth",
+            label: "An Experienced Swindler",
+            aspects:
+            {mortal: 1,hireling:1,follower:1,moth:5,grail:1,compelled:1},
+            description: "'How delightful to be working with you!' [This Hireling may be useful for some Expeditions, and can help with Hunters and Annoyances.]",
+			xtriggers: {hiring:aide_moth,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p},
+			lifetime:600,
+			decayTo: "aide_moth_unpaid"
+        },
+		{
+			id: "aide_edgeminor_unpaid",
+            label: "A Hulking Fellow",
+			icon: "aide_edgeminor",
+            aspects:
+            {mortal: 1,hireling:1,edge:3,compelled:1, unpaid:1},
+              description: "'I get the job done.' [This Hireling may be useful for some Expeditions, and can help with Hunters and Annoyances.]",
+			xtriggers: {hiring: aide_edgeminor,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p}
+        },
+		{
+			id: "aide_mothminor_unpaid",
+            label: "A Shifty Woman",
+			icon: "aide_mothminor",
+            aspects:
+            {mortal: 1,hireling:1,moth:3,compelled:1, unpaid:1},
+              description: "'I get the job done.' [This Hireling may be useful for some Expeditions, and can help with Hunters and Annoyances.]",
+			xtriggers: {hiring: aide_mothminor,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p}
+        },
+		{
+			id: "aide_edge_unpaid",
+            label: "Professional Muscle",
+			icon: "aide_edge",
+            aspects:
+            {mortal: 1,hireling:1,edge:5,compelled:1, unpaid:1},
+              description: "'I'll break them in half.' [This Hireling may be useful for some Expeditions, and can help with Hunters and Annoyances.]",
+			xtriggers: {hiring: aide_edge,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p}
+        },
+		{
+			id: "aide_forgeedge_unpaid",
+            label: "A Bomb-Maker",
+			icon: "aide_forgeedge",
+            aspects:
+            {mortal: 1,hireling:1,forge:5,edge:3,compelled:1, unpaid:1},
+            description: "'Perhaps we shouldn't discuss politics just yet.' [This Hireling may be useful for some Expeditions, and can help with Hunters and Annoyances.]",
+			xtriggers: {hiring:aide_forgeedge,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p}
+        },
+		{
+			id: "aide_knock_unpaid",
+            label: "An Entry Consultant",
+			icon: "aide_knock",
+            aspects:
+            {mortal: 1,hireling:1,knock:5,compelled:1, unpaid:1},
+            description: "'I'm good with doors. [This Hireling may be useful for some Expeditions.]'",
+			xtriggers: {hiring:aide_knock,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p}
+        },
+		{
+			id: "aide_lanternmoth_unpaid",
+            label: "A Fortune-Teller",
+			icon: "aide_lanternmoth",
+            aspects:
+            {mortal: 1,hireling:1,lantern:5,moth:3,compelled:1, unpaid:1},
+            description: "'I see things. I see that you're different.' [This Hireling may be useful for some Expeditions, and can help with Hunters and Annoyances.]",
+			xtriggers: {hiring:aide_lanternmoth,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p}
+        },
+		{
+			id: "aide_moth_unpaid",
+            label: "An Experienced Swindler",
+			icon: "aide_moth",
+            aspects:
+            {mortal: 1,hireling:1,moth:5,grail:1,compelled:1, unpaid:1},
+            description: "'How delightful to be working with you!' [This Hireling may be useful for some Expeditions, and can help with Hunters and Annoyances.]",
+			xtriggers: {hiring:aide_moth,killmortal:corpse,derangemortal:lunatic,capturefollower:generic_p}
+        }
+		
+]
+}
+		
