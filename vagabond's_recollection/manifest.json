@@ -1,0 +1,8 @@
+{
+    "name": "Rite: Vagabond's Recollection",
+    "author": "Arkeneth",
+    "version": "1.0.0",
+
+    "description": "Adds a rite for generating SH.",
+    "description_long": "Vagabond's Recollection is a SH+Lantern rite that can spawn a SH Lore card once used. Chances depend on total SH levels."
+}
