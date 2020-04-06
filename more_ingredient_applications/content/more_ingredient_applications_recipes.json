@@ -17,6 +17,14 @@
 			"craftable": true
 		},
 		{
+			"id": "talktospirit",
+			"extends": ["talktospirit"],
+			"alternativerecipes$append": 
+			[
+				{"id": "risen_offer_witchoil"}
+			]
+		},
+		{
 			"id": "talktofollower",
 			"extends": ["talktofollower"],
 			"alternativerecipes$append": 
@@ -52,6 +60,24 @@
 			},
 			"aspects":
 			{compel:1}
+		},
+		{
+			"id": "risen_offer_witchoil",
+			"actionId": "talk",
+			"label": "Fortify the Risen with Witch-Kissed Oil?",
+			"requirements":
+			{
+				"risen": 1,
+				"ingredientheartd": 1,
+				"risenfortified": -1
+			},
+			"startdescription": "These living dead aren't meant to persevere. However, this sacred oil will keep them what they are for a long time - as long as I'll need them to.",
+			"description": "It is done.",
+			"effects": 
+			{
+				"ingredientheartd":-1
+			},
+			"aspects":{"risenfortify":1}
 		},
 		{
 			"id": "pay_compelled_hireling_no_payment",
